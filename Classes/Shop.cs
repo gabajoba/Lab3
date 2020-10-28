@@ -50,20 +50,20 @@ namespace Lab3.Classes
             try
             {
                 ((IDevice)device).GetInfo();
-                Console.WriteLine("\nDo you want to buy it?\n1 - Yes\nAnything else - No");
+                Console.WriteLine("\nDo you want to buy it?\n1 - Yes\nAnything else - No\n");
                 var str = Console.ReadLine();
                 if (str == "1")
                 {
-                    Console.WriteLine($"Congratulations, you bought {((IDevice)device).Name}");
+                    Console.WriteLine($"\nCongratulations, you bought {((IDevice)device).Name}\n");
                 } else
                 {
-                    Console.WriteLine("Well, let's see another product");
+                    Console.WriteLine("\nWell, let's see another product\n");
                 }
 
             }
             catch
             {
-                Console.WriteLine("Something went wrong");
+                Console.WriteLine("\nSomething went wrong\n");
             }
             
             return device;
