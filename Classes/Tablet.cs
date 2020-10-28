@@ -1,38 +1,47 @@
-﻿using Lab3.Interfaces;
+﻿using Lab3.Classes.Peripherals;
+using Lab3.Interfaces;
 using System;
 using System.Collections.Generic;
 
 namespace Lab3.Classes
-{
-    [Serializable]
+{    
     class Tablet : IDevice
     {
-        string IDevice.Name => "Tablet";
-        public IEnumerable<string> Components => new List<string>()
+        public string Name { get; set; }
+        public IEnumerable<IPeripheral> Components { get; set; }
+
+        public Tablet()
         {
-            "Keyboard: -",
-            "Display: UltraHD",
-            "Mouse: -" ,
-            "TouchPad: -" ,
-            "CPU: 8cores" ,
-            "RAM: 2Gb" ,
-            "ROM: 128Gb"
-        };
+            //default Tablet configuration
+            Name = "Tablet";
+            Components = new List<IPeripheral>()
+            {       
+                new Display("UltraHD", 200),              
+                new CPU("8cores", 600),
+                new RAM("2Gb", 120),
+                new ROM("128Gb", 80)
+            };
+        }
+
+        public Tablet(Tablet tablet)
+        {
+            this.Name = tablet.Name;
+            this.Components = tablet.Components;
+        }
 
         public IPrototype Clone()
         {
-            return new Tablet();
+            return new Tablet(this);
         }
-
         public void GetInfo()
         {
-            
-            foreach (string temp in Components)
+            decimal _cost = 0;
+            foreach (IPeripheral temp in Components)
             {
+                _cost += temp.Price;
                 Console.WriteLine($"{temp}");
             }
-            Console.WriteLine("\n");
-
+            Console.WriteLine($"\nTotal price : {_cost}\n");
         }
     }
 }

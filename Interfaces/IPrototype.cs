@@ -1,8 +1,7 @@
-﻿
-namespace Lab3.Interfaces
+﻿namespace Lab3.Interfaces
 {
     interface IPrototype
     {
-        IPrototype Clone();
+        IPrototype Clone();        
     }
 }
