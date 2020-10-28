@@ -46,8 +46,16 @@
     <Compile Include="Classes\Desktop.cs" />
     <Compile Include="Classes\Laptop.cs" />
     <Compile Include="Classes\Notebook.cs" />
+    <Compile Include="Classes\Peripherals\CPU.cs" />
+    <Compile Include="Classes\Peripherals\Display.cs" />
+    <Compile Include="Classes\Peripherals\Keyboard.cs" />
+    <Compile Include="Classes\Peripherals\Mouse.cs" />
+    <Compile Include="Classes\Peripherals\RAM.cs" />
+    <Compile Include="Classes\Peripherals\ROM.cs" />
+    <Compile Include="Classes\Peripherals\TouchPad.cs" />
     <Compile Include="Classes\Shop.cs" />
     <Compile Include="Classes\Tablet.cs" />
+    <Compile Include="Interfaces\IPeripheral.cs" />
     <Compile Include="Interfaces\IDevice.cs" />
     <Compile Include="Interfaces\IPrototype.cs" />
     <Compile Include="Program.cs" />

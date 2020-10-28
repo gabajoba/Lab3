@@ -4,8 +4,8 @@ namespace Lab3.Interfaces
 {
     interface IDevice : IPrototype
     {
-        string Name { get; }
-        IEnumerable<string> Components { get;}
+        string Name { get; set; }
+        IEnumerable<IPeripheral> Components { get; set; }
         void GetInfo();
     }
 }

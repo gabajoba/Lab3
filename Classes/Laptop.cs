@@ -1,41 +1,49 @@
-﻿using Lab3.Interfaces;
+﻿using Lab3.Classes.Peripherals;
+using Lab3.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Lab3.Classes
 {
-    [Serializable]
     class Laptop : IDevice
     {
-        string IDevice.Name => "Laptop";
-        public IEnumerable<string> Components => new List<string>()
+        public string Name { get; set; }
+        public IEnumerable<IPeripheral> Components { get; set; }
+      
+        public Laptop()
         {
-            "Keyboard: 101",
-            "Display: HD",
-            "Mouse: -" ,
-            "TouchPad: 2-button" ,
-            "CPU: 2cores" ,
-            "RAM: 4Gb" ,
-            "ROM: 320Gb" 
-        };
+            //default Laptop configuration
+            Name = "Laptop";
+            Components = new List<IPeripheral>()
+            {
+                new Keyboard("101",70),
+                new Display("HD", 100),
+                new TouchPad("2-button", 150),
+                new CPU("2cores", 300),
+                new RAM("4Gb", 180),
+                new ROM("320Gb", 110)
+            };
+        }
+        public Laptop(Laptop laptop)
+        {
+            this.Name = laptop.Name;
+            this.Components = laptop.Components;
+        }
+
 
         public IPrototype Clone()
         {
-            return new Laptop();
+            return new Laptop(this);
         }
-
         public void GetInfo()
         {
-            
-            foreach (string temp in Components)
+            decimal _cost = 0;
+            foreach (IPeripheral temp in Components)
             {
+                _cost += temp.Price;
                 Console.WriteLine($"{temp}");
             }
-            Console.WriteLine("\n");
-
+            Console.WriteLine($"\nTotal price : {_cost}\n");
         }
     }
 }
