@@ -28,11 +28,7 @@ namespace Lab3.Classes
             new Tablet(),
         };
         public void StartShoping(string name)
-        {
-            var Desk = new Desktop();
-            var Desk2 = Desk.Clone();
-            var Desk3 = Desk2.Clone();
-            
+        {          
             string temp = null;
             Console.WriteLine($"Hi, {name}, do you want to buy something?\n");
             do
@@ -60,8 +56,6 @@ namespace Lab3.Classes
                     }
                 }
             } while (temp != "0");
-
-
         }
         public object ConfirmPurchase(IDevice device)
         {

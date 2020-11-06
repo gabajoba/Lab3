@@ -7,11 +7,9 @@ using System.Collections.Generic;
 namespace Lab3.Classes
 {    
     class Desktop : Device
-    {       
-      
+    {            
         public Desktop()
         {
-
             //default Desktop configuration
             Name = "Desktop";
             Components = new List<IPeripheral>()
@@ -22,6 +20,7 @@ namespace Lab3.Classes
                 new ROM("1Tb", 160)
             };
         }
+
         public Desktop(Desktop desktop)
         {
             this.Name = desktop.Name;

@@ -8,7 +8,6 @@ namespace Lab3.Classes
 {    
     class Tablet : Device
     {
-
         public Tablet()
         {
             //default Tablet configuration

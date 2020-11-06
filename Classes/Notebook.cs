@@ -7,8 +7,7 @@ using System.Collections.Generic;
 namespace Lab3.Classes
 {
     class Notebook : Device
-    {
-        
+    {      
         public Notebook()
         {
             //default Notebook configuration

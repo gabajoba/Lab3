@@ -28,7 +28,6 @@ namespace Lab3.Classes
             this.Components = laptop.Components;
         }
 
-
         public override IDevice Clone()
         {
             return new Laptop(this);
