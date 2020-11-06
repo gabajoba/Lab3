@@ -5,6 +5,7 @@ namespace Lab3.Classes.Peripherals
     class ROM : IPeripheral
     {
         public string Name { get; set; }
+
         public decimal Price { get; set; }
 
         public ROM(string name, decimal price)

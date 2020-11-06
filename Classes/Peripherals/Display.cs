@@ -5,6 +5,7 @@ namespace Lab3.Classes.Peripherals
     class Display : IPeripheral
     {
         public string Name { get; set; }
+
         public decimal Price { get; set; }
 
         public Display(string name,decimal price)

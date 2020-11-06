@@ -5,6 +5,7 @@ namespace Lab3.Classes.Peripherals
     class Mouse : IPeripheral
     {
         public string Name { get; set; }
+
         public decimal Price { get; set; }
         public Mouse(string name, decimal price)
         {

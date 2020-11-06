@@ -5,6 +5,7 @@ namespace Lab3.Classes.Peripherals
     class CPU : IPeripheral
     {
         public string Name { get; set; }
+
         public decimal Price { get; set; }
 
         public CPU(string name,decimal price)

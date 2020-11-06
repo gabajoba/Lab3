@@ -5,6 +5,7 @@ namespace Lab3.Classes.Peripherals
     class Keyboard : IPeripheral
     {
         public string Name { get; set;}           
+
         public decimal Price { get;set;}
 
         public Keyboard(string name, decimal price)

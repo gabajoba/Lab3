@@ -1,15 +1,13 @@
 ﻿using Lab3.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab3.AbstractClasses
 {
     abstract class Device : IDevice
     {
         public string Name { get; set; }
+
         public IEnumerable<IPeripheral> Components { get; set; }
 
         public abstract IDevice Clone();

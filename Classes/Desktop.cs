@@ -1,7 +1,6 @@
 ﻿using Lab3.AbstractClasses;
 using Lab3.Classes.Peripherals;
 using Lab3.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace Lab3.Classes
