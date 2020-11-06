@@ -2,10 +2,11 @@
 
 namespace Lab3.Interfaces
 {
-    interface IDevice : IPrototype
+    interface IDevice
     {
         string Name { get; set; }
         IEnumerable<IPeripheral> Components { get; set; }
         void GetInfo();
+        IDevice Clone();
     }
 }

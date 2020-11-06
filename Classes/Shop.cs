@@ -29,6 +29,10 @@ namespace Lab3.Classes
         };
         public void StartShoping(string name)
         {
+            var Desk = new Desktop();
+            var Desk2 = Desk.Clone();
+            var Desk3 = Desk2.Clone();
+            
             string temp = null;
             Console.WriteLine($"Hi, {name}, do you want to buy something?\n");
             do
@@ -48,7 +52,7 @@ namespace Lab3.Classes
                     try
                     {
                         Console.WriteLine($"\nYou choose {_devices.ToList()[Int32.Parse(temp) - 1].Name}\n");
-                        ConfirmPurchase((IDevice)_devices.ToList()[Int32.Parse(temp) - 1].Clone());
+                        ConfirmPurchase(_devices.ToList()[Int32.Parse(temp) - 1].Clone());
                     }
                     catch
                     {
@@ -64,7 +68,11 @@ namespace Lab3.Classes
             try
             {
                 device.GetInfo();
-                Console.WriteLine("\nDo you want to buy it?\n1 - Yes\nAnything else - No\n");
+                Console.WriteLine(
+                    "\nDo you want to buy it?" +
+                    "\n1 - Yes" +
+                    "\nAnything else - No" +
+                    "\n");
                 var str = Console.ReadLine();
                 if (str == "1")
                 {

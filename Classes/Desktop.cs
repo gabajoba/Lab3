@@ -1,15 +1,14 @@
-﻿using Lab3.Classes.Peripherals;
+﻿using Lab3.AbstractClasses;
+using Lab3.Classes.Peripherals;
 using Lab3.Interfaces;
 using System;
 using System.Collections.Generic;
 
 namespace Lab3.Classes
 {    
-    class Desktop : IDevice
+    class Desktop : Device
     {       
-        public string Name{ get; set; }
-        public IEnumerable<IPeripheral> Components { get; set; }
-        
+      
         public Desktop()
         {
 
@@ -27,22 +26,11 @@ namespace Lab3.Classes
         {
             this.Name = desktop.Name;
             this.Components = desktop.Components;
-        }
-             
-        public IPrototype Clone()
-        {            
-            return new Desktop(this);
-        }       
+        }               
 
-        public void GetInfo()
+        public override IDevice Clone()
         {
-            decimal _cost = 0;
-            foreach (IPeripheral temp in Components)
-            {
-                _cost += temp.Price;
-                Console.WriteLine($"{temp}");
-            }
-            Console.WriteLine($"\nTotal price : {_cost}\n");           
+            return new Desktop(this); 
         }
     }
 }

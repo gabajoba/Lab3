@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClasses\Device.cs" />
     <Compile Include="Classes\Desktop.cs" />
     <Compile Include="Classes\Laptop.cs" />
     <Compile Include="Classes\Notebook.cs" />
@@ -57,15 +58,12 @@
     <Compile Include="Classes\Tablet.cs" />
     <Compile Include="Interfaces\IPeripheral.cs" />
     <Compile Include="Interfaces\IDevice.cs" />
-    <Compile Include="Interfaces\IPrototype.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AbstractClasses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
