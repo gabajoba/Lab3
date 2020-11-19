@@ -10,8 +10,8 @@ namespace Lab3.Classes
         public Notebook()
         {
             //default Notebook configuration
-            Name = "Notebook";
-            Components = new List<IPeripheral>()
+            _name = "Notebook";
+            _components = new List<IPeripheral>()
             {
                 new Keyboard("108",50),
                 new Display("FullHD", 200),
@@ -23,8 +23,8 @@ namespace Lab3.Classes
         }
         public Notebook(Notebook notebook)
         {
-            this.Name = notebook.Name;
-            this.Components = notebook.Components;
+            this._name = notebook._name;
+            this._components = notebook._components;
         }
 
         public override IDevice Clone()

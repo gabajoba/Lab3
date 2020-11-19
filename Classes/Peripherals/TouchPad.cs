@@ -4,18 +4,18 @@ namespace Lab3.Classes.Peripherals
 {
     class TouchPad : IPeripheral
     {
-        public string Name { get; set; }
+        public string _name { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal _price { get; set; }
 
         public TouchPad(string name, decimal price)
         {
-            this.Name = name;
-            this.Price = price;
+            this._name = name;
+            this._price = price;
         }
         public override string ToString()
         {
-            return $"TouchPad - {Name}, Price - {Price}";
+            return $"TouchPad - {_name}, Price - {_price}";
         }
     }
 }

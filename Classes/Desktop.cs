@@ -10,8 +10,8 @@ namespace Lab3.Classes
         public Desktop()
         {
             //default Desktop configuration
-            Name = "Desktop";
-            Components = new List<IPeripheral>()
+            _name = "Desktop";
+            _components = new List<IPeripheral>()
             {                
                 new Mouse("2-button", 90),               
                 new CPU("4cores", 350),
@@ -22,8 +22,8 @@ namespace Lab3.Classes
 
         public Desktop(Desktop desktop)
         {
-            this.Name = desktop.Name;
-            this.Components = desktop.Components;
+            this._name = desktop._name;
+            this._components = desktop._components;
         }               
 
         public override IDevice Clone()

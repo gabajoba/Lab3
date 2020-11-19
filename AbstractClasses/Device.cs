@@ -6,21 +6,21 @@ namespace Lab3.AbstractClasses
 {
     abstract class Device : IDevice
     {
-        public string Name { get; set; }
+        public string _name { get; set; }
 
-        public IEnumerable<IPeripheral> Components { get; set; }
+        public IEnumerable<IPeripheral> _components { get; set; }
 
         public abstract IDevice Clone();
 
         public void GetInfo()
         {
-            decimal _cost = 0;
-            foreach (IPeripheral temp in Components)
+            decimal cost = 0;
+            foreach (IPeripheral temp in _components)
             {
-                _cost += temp.Price;
+                cost += temp._price;
                 Console.WriteLine($"{temp}");
             }
-            Console.WriteLine($"\nTotal price : {_cost}\n");
+            Console.WriteLine($"\nTotal price : {cost}\n");
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     interface IPeripheral
     {
-        string Name { get; set; }
-        decimal Price { get; set; }
+        string _name { get; set; }
+        decimal _price { get; set; }
     }
 }
