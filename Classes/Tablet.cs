@@ -10,8 +10,8 @@ namespace Lab3.Classes
         public Tablet()
         {
             //default Tablet configuration
-            _name = "Tablet";
-            _components = new List<IPeripheral>()
+            Name = "Tablet";
+            Components = new List<IPeripheral>()
             {       
                 new Display("UltraHD", 200),              
                 new CPU("8cores", 600),
@@ -22,8 +22,12 @@ namespace Lab3.Classes
 
         public Tablet(Tablet tablet)
         {
-            this._name = tablet._name;
-            this._components = tablet._components;
+            Name = tablet.Name;
+            Components = new List<IPeripheral>();
+            foreach (IPeripheral peripheral in tablet.Components)
+            {
+                Components.Add(peripheral);
+            }
         }
 
         public override IDevice Clone()

@@ -4,8 +4,8 @@ namespace Lab3.Interfaces
 {
     interface IDevice
     {
-        string _name { get; set; }
-        IEnumerable<IPeripheral> _components { get; set; }
+        string Name { get; set; }
+        ICollection<IPeripheral> Components { get; set; }
         void GetInfo();
         IDevice Clone();
     }

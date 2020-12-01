@@ -4,18 +4,18 @@ namespace Lab3.Classes.Peripherals
 {
     class CPU : IPeripheral
     {
-        public string _name { get; set; }
+        public string Name { get; set; }
 
-        public decimal _price { get; set; }
+        public decimal Price { get; set; }
 
         public CPU(string name,decimal price)
         {
-            this._name = name;
-            this._price = price;
+            this.Name = name;
+            this.Price = price;
         }
         public override string ToString()
         {
-            return $"CPU - {_name}, Price  - {_price}";
+            return $"CPU - {Name}, Price  - {Price}";
         }
     }
 }

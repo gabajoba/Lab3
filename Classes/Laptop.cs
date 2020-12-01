@@ -10,8 +10,8 @@ namespace Lab3.Classes
         public Laptop()
         {
             //default Laptop configuration
-            _name = "Laptop";
-            _components = new List<IPeripheral>()
+            Name = "Laptop";
+            Components = new List<IPeripheral>()
             {
                 new Keyboard("101",70),
                 new Display("HD", 100),
@@ -23,8 +23,12 @@ namespace Lab3.Classes
         }
         public Laptop(Laptop laptop)
         {
-            this._name = laptop._name;
-            this._components = laptop._components;
+            Name = laptop.Name;
+            Components = new List<IPeripheral>();
+            foreach (IPeripheral peripheral in laptop.Components)
+            {
+                Components.Add(peripheral);
+            }
         }
 
         public override IDevice Clone()

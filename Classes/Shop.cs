@@ -12,8 +12,8 @@ namespace Lab3.Classes
         {
             new Desktop()
             {
-                _name = "TestDesktop",
-                _components = new List<IPeripheral>
+                Name = "TestDesktop",
+                Components = new List<IPeripheral>
                 { 
                     new Mouse("TestMouse",100),
                     new Keyboard("TestKeyboard",100),
@@ -37,7 +37,7 @@ namespace Lab3.Classes
                 foreach (IDevice device in _devices)
                 {
                     i++;
-                    Console.WriteLine($"{i} - {device._name}");
+                    Console.WriteLine($"{i} - {device.Name}");
                 }
                 Console.WriteLine("\n0 - exit\n");
 
@@ -47,7 +47,7 @@ namespace Lab3.Classes
                 {
                     try
                     {
-                        Console.WriteLine($"\nYou choose {_devices.ToList()[Int32.Parse(temp) - 1]._name}\n");
+                        Console.WriteLine($"\nYou choose {_devices.ToList()[Int32.Parse(temp) - 1].Name}\n");
                         ConfirmPurchase(_devices.ToList()[Int32.Parse(temp) - 1].Clone());
                     }
                     catch
@@ -70,7 +70,7 @@ namespace Lab3.Classes
                 var str = Console.ReadLine();
                 if (str == "1")
                 {
-                    Console.WriteLine($"\nCongratulations, you bought {device._name}\n");
+                    Console.WriteLine($"\nCongratulations, you bought {device.Name}\n");
                 } else
                 {
                     Console.WriteLine("\nWell, let's see another product\n");
